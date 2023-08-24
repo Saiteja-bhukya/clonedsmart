@@ -163,13 +163,14 @@ def main():
 
         if "MCQ" in i[0][2]:
             if len(i[1][0][3]) > 4:
+                optnum = 1
                 for j in i[1]:
                     selected_image = fetch_image_by_id(j[3])
                     image_bytes = bytes(selected_image)
                     image_stream = BytesIO(image_bytes)
                     st.image(image_stream)
-                mcq.append(str(optnum))
-                optnum += 1
+                    mcq.append(str(optnum))
+                    optnum += 1
 
                 st.radio("Select the Option based on Images above", mcq, key=i[0][0]+'__'+str(optnum))
 
