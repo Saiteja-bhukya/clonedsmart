@@ -103,7 +103,13 @@ def main():
     # add_logo("https://i.imgur.com/W0NrmI1.png")
     add_logo()
 
-    st.write("Write here")
+    st.write("I Am Sai Teja and I'm an amateur coder who dabbles in Web Development. I'm currently pursuing Diploma level and plan to complete the BS Degree.")
+
+    st.write("This Website was conceived as a part of roster of projects done for the Wayanad Tech Club.")
+
+    st.write("Apart from academics i love playing Cricket, CS:GO and chess. I love watching movies in my spare time.")
+
+    st.write("If you would like to collaborate on any projects or just reach out for any doubts regarding the website, I'll be available at 21f1005681@ds.study.iitm.ac.in")
 
 if __name__ == "__main__":
     main()
