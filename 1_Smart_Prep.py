@@ -1,9 +1,10 @@
 import streamlit as st
+#from streamlit_extras.app_logo import add_logo
 import sqlite3
 from io import BytesIO
 
 
-st.set_page_config(page_title="SmartPrep")
+st.set_page_config(page_title="SmartPrep",page_icon="https://i.imgur.com/S9k9LNT.png")
 
 # Function to fetch subjects from the database
 def fetch_subjects():
@@ -72,7 +73,28 @@ def btn_b_callback():
     st.session_state.display_result = False
     st.session_state.reset = False
 
+def add_logo():
+    st.markdown(
+        """
+        <style>
+            [data-testid="stSidebarNav"] {
+                background-image: url(https://i.imgur.com/S9k9LNT.png);
+                background-repeat: no-repeat;
+                padding-top: 120px;
+                background-position: 20px 20px;
 
+            }
+            [data-testid="stSidebarNav"]::before {
+                margin-left: 20px;
+                margin-top: 20px;
+                font-size: 30px;
+                position: relative;
+                top: 100px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
 def main():
     st.title("Smartprep")
@@ -94,6 +116,8 @@ def main():
     selected_subject = st.selectbox("Select a subject", subjects)
 
     st.title("Paper Selection")
+    #add_logo("https://i.imgur.com/W0NrmI1.png")
+    add_logo()
 
     papers = fetch_papers_by_subject(selected_subject)
     pnames = []
